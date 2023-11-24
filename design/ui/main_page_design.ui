@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainPage</class>
+ <widget class="QMainWindow" name="MainPage">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1200</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Cascadia Code</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Films Going</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget#centralwidget {background-color: rgb(30, 30, 30);}</string>
+   </property>
+   <widget class="QLabel" name="app_name">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>20</y>
+      <width>202</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Algerian</family>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#app_name {
+	background-color: transparent;
+	color: rgb(224, 139, 70);
+}</string>
+    </property>
+    <property name="text">
+     <string>Films Going</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="films_list">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>190</y>
+      <width>751</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor" stdset="0">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QListWidget#films_list {
+	border: 0;
+	background-color: rgb(47, 47, 47);
+	color: rgb(203, 116, 47);
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	letter-spacing: 0.17px;
+	padding: 10px;
+	outline: 0;
+}
+
+QListWidget#films_list::item {
+	border-radius: 4px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+QListWidget#films_list::item:hover {background-color: rgb(30, 30, 30);}
+QListWidget#films_list::item:selected {color: rgb(224, 139, 70);}
+
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAsNeeded</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::SingleSelection</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="search_film">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>78</y>
+      <width>981</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit#search_film {
+background-color: rgb(47, 47, 47);
+color: rgb(203, 116, 47);
+selection-background-color: rgb(203, 116, 47);
+selection-color: rgb(47, 47, 47);
+border-top-left-radius: 8px;
+border-bottom-left-radius: 8px;
+padding-left: 10px;
+padding-right: 10px;
+border: 3px solid rgb(203, 116, 47);
+border-right-width: 0;
+}</string>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+    <property name="cursorPosition">
+     <number>0</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Найти фильм...</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="search_button">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>78</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <stylestrategy>PreferDefault</stylestrategy>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#search_button {
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(203, 116, 47, 255), stop:1 rgba(231, 146, 78, 255));
+color: rgb(0,0,0);
+border: 0;
+border-top-right-radius: 8px;
+border-bottom-right-radius: 8px;}
+
+QPushButton#search_button:pressed {border: 1px solid rgb(47, 47, 47);}</string>
+    </property>
+    <property name="text">
+     <string>Поиск</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="film_label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>160</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#film_label {
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(203, 116, 47, 255), stop:1 rgba(231, 146, 78, 255));
+color: rgb(47, 47, 47);
+border: 0;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+letter-spacing: 0.5px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Все фильмы</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="filter_label">
+    <property name="geometry">
+     <rect>
+      <x>805</x>
+      <y>190</y>
+      <width>381</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#filter_label {
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(203, 116, 47, 255), stop:1 rgba(231, 146, 78, 255));
+color: rgb(47, 47, 47);
+border: 0;
+border-radius: 3px;
+letter-spacing: 0.5px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Фильтры</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="genre_label">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>250</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#genre_label {
+background-color: rgb(47, 47, 47);
+color: rgb(203, 116, 47);
+border: 0;
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;
+letter-spacing: 1px;
+padding-left: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Жанр</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="start_year_label">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>300</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#start_year_label {
+background-color: rgb(47, 47, 47);
+color: rgb(203, 116, 47);
+border: 0;
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;
+letter-spacing: -0.5px;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>С какого года</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="genre_box">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>250</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="currentText">
+     <string notr="true"/>
+    </property>
+    <property name="currentIndex">
+     <number>-1</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="start_year_spin">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>300</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSpinBox#start_year_spin {
+background-color: rgb(47, 47, 47);
+color: rgb(203, 116, 47);
+selection-background-color: rgb(203, 116, 47);
+selection-color: rgb(47, 47, 47);
+border: 0;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+letter-spacing: 0.2px;
+padding-left: 5px;
+padding-right: 5px;
+}
+
+QSpinBox#start_year_spin::down-button {
+	top: 2px;
+	height: 18px;
+	width: 18px;
+}
+
+QSpinBox#start_year_spin::up-button {
+	height: 18px;
+	width: 18px;
+}
+</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_filter_button">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>520</y>
+      <width>371</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <stylestrategy>PreferDefault</stylestrategy>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#reset_filter_button {
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(203, 116, 47, 255), stop:1 rgba(231, 146, 78, 255));
+color: rgb(0,0,0);
+border: 0;
+border-radius: 8px;
+}
+
+QPushButton#reset_filter_button:pressed {border: 1px solid rgb(47, 47, 47);}
+QPushButton#reset_filter_button:disabled {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(203, 116, 47, 190), stop:1 rgba(231, 146, 78, 190));
+	color: rgb(47, 47, 47);
+}</string>
+    </property>
+    <property name="text">
+     <string>Сбросить</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="end_year_spin">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>350</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSpinBox#end_year_spin {
+background-color: rgb(47, 47, 47);
+color: rgb(203, 116, 47);
+selection-background-color: rgb(203, 116, 47);
+selection-color: rgb(47, 47, 47);
+border: 0;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+letter-spacing: 0.2px;
+padding-left: 5px;
+padding-right: 5px;
+}
+
+QSpinBox#end_year_spin::down-button {
+	top: 2px;
+	height: 18px;
+	width: 18px;
+}
+
+QSpinBox#end_year_spin::up-button {
+	height: 18px;
+	width: 18px;
+}</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="end_year_label">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>350</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#end_year_label {
+background-color: rgb(47, 47, 47);
+color: rgb(203, 116, 47);
+border: 0;
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;
+letter-spacing: -0.5px;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>По какой год</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="min_duration_label">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>400</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#min_duration_label {
+background-color: rgb(47, 47, 47);
+color: rgb(203, 116, 47);
+border: 0;
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;
+letter-spacing: -0.5px;
+word-spacing: -7px;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Мин. длительность</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="min_duration_spin">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>400</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSpinBox#min_duration_spin {
+background-color: rgb(47, 47, 47);
+color: rgb(203, 116, 47);
+selection-background-color: rgb(203, 116, 47);
+selection-color: rgb(47, 47, 47);
+border: 0;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+letter-spacing: 0.2px;
+padding-left: 5px;
+padding-right: 5px;
+}
+
+QSpinBox#min_duration_spin::down-button {
+	top: 2px;
+	height: 18px;
+	width: 18px;
+}
+
+QSpinBox#min_duration_spin::up-button {
+	height: 18px;
+	width: 18px;
+}</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="max_duration_label">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>450</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#max_duration_label {
+background-color: rgb(47, 47, 47);
+color: rgb(203, 116, 47);
+border: 0;
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;
+letter-spacing: -0.5px;
+word-spacing: -7px;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Макс. длительность</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="max_duration_spin">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>450</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSpinBox#max_duration_spin {
+background-color: rgb(47, 47, 47);
+color: rgb(203, 116, 47);
+selection-background-color: rgb(203, 116, 47);
+selection-color: rgb(47, 47, 47);
+border: 0;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+letter-spacing: 0.2px;
+padding-left: 5px;
+padding-right: 5px;
+}
+
+QSpinBox#max_duration_spin::down-button {
+	top: 2px;
+	height: 18px;
+	width: 18px;
+}
+
+QSpinBox#max_duration_spin::up-button {
+	height: 18px;
+	width: 18px;
+}</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="add_film_button">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>160</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <stylestrategy>PreferDefault</stylestrategy>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#add_film_button {
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(203, 116, 47, 255), stop:1 rgba(231, 146, 78, 255));
+color: rgb(0,0,0);
+border: 0;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
+QPushButton#add_film_button:pressed {border: 1px solid rgb(47, 47, 47);}
+</string>
+    </property>
+    <property name="text">
+     <string>Добавить</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
